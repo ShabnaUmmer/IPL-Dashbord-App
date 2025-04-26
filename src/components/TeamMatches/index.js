@@ -2,8 +2,10 @@
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 
+import {Link} from 'react-router-dom'
 import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
+import PieChartComponent from '../PieChartComponent'
 
 import './index.css'
 
@@ -64,13 +66,50 @@ class TeamMatches extends Component {
     )
   }
 
+  getMatchStats = () => {
+    const {teamMatchesData} = this.state
+    const {recentMatches} = teamMatchesData
+
+    return [
+      {
+        name: 'Won',
+        value: recentMatches.filter(match => match.matchStatus === 'Won')
+          .length,
+      },
+      {
+        name: 'Lost',
+        value: recentMatches.filter(match => match.matchStatus === 'Lost')
+          .length,
+      },
+      {
+        name: 'Drawn',
+        value: recentMatches.filter(match => match.matchStatus === 'Drawn')
+          .length,
+      },
+    ]
+  }
+
   renderTeamMatches = () => {
     const {teamMatchesData} = this.state
-    const {teamBannerURL, latestMatch} = teamMatchesData
+    const {teamBannerURL, latestMatch, recentMatches} = teamMatchesData
+
+    if (!recentMatches || recentMatches.length === 0) {
+      return null
+    }
 
     return (
       <div className="responsive-container">
+        <Link to="/" style={{textDecoration: 'none'}}>
+          <button
+            type="button"
+            className="back"
+            style={{textDecoration: 'none'}}
+          >
+            Back
+          </button>
+        </Link>
         <img src={teamBannerURL} alt="team banner" className="team-banner" />
+        <PieChartComponent data={this.getMatchStats()} />
         <LatestMatch latestMatchData={latestMatch} />
         {this.renderRecentMatchesList()}
       </div>

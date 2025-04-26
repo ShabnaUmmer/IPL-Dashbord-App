@@ -6,8 +6,12 @@
 .latest-match-heading {
   color: #ffffff;
   font-family: 'Bree Serif';
-  font-size: 16px;
+
   display: block;
+  line-height: 4px;
+  letter-spacing: 2px;
+  font-size: 26px;
+  padding-bottom: 20px;
 }
 
 .latest-match-card {

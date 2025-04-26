@@ -6,6 +6,7 @@
   background-image: url('https://assets.ccbp.in/frontend/react-js/ipl-dashboard-sm-bg.png');
   background-size: cover;
   min-height: 100vh;
+  padding: 20px 30px;
 }
 
 @media screen and (min-width: 768px) {
@@ -14,22 +15,12 @@
   }
 }
 
-.teams-list-container {
-  width: 90%;
-  max-width: 600px;
-}
-
-@media screen and (min-width: 768px) {
-  .teams-list-container {
-    width: 90%;
-    max-width: 1110px;
-  }
-}
 
 .ipl-dashboard-heading-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .ipl-logo {
@@ -67,6 +58,32 @@
 
 .teams-list {
   display: flex;
+
+  align-items: center;
   flex-wrap: wrap;
-  padding-left: 0px;
+  justify-content: center;
+  padding-left: 0;
+  width: 100%;
+  gap: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .team-item {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+
+  .team-card-link {
+    height: 150px;
+    padding: 15px 25px;
+  }
+
+  .team-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .team-name {
+    font-size: 24px;
+  }
 }

@@ -33,7 +33,7 @@ class Home extends Component {
     return (
       <ul className="teams-list">
         {teamsData.map(team => (
-          <TeamCard teamDetails={team} key={team.id} /> // Render TeamCard for each team
+          <TeamCard teamDetails={team} key={team.id} />
         ))}
       </ul>
     )
@@ -50,17 +50,15 @@ class Home extends Component {
 
     return (
       <div className="home-route-container">
-        <div className="teams-list-container">
-          <div className="ipl-dashboard-heading-container">
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/ipl-logo-img.png"
-              alt="ipl logo"
-              className="ipl-logo"
-            />
-            <h1 className="ipl-dashboard-heading">IPL Dashboard</h1>
-          </div>
-          {isLoading ? this.renderLoader() : this.renderTeamsList()}
+        <div className="ipl-dashboard-heading-container">
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/ipl-logo-img.png"
+            alt="ipl logo"
+            className="ipl-logo"
+          />
+          <h1 className="ipl-dashboard-heading">IPL Dashboard</h1>
         </div>
+        {isLoading ? this.renderLoader() : this.renderTeamsList()}
       </div>
     )
   }

@@ -1,0 +1,27 @@
+.pie-chart-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+  background-color: #0f172a;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 100%;
+  font-family: 'Bree Serif';
+  line-height: 4px;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+.pie-chart-title {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-family: 'Bree Serif';
+}
+
+@media (max-width: 768px) {
+  .pie-chart-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
