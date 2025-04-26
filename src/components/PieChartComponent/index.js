@@ -31,10 +31,10 @@ const PieChartComponent = ({data}) => {
             dataKey="value"
             label={({percent}) => `${(percent * 100).toFixed(0)}%`}
           >
-            {data.map(entry => (
+            {data.map((entry, index) => (
               <Cell
-                key={`cell-${entry.name}`}
-                fill={COLORS[entry.value % COLORS.length]}
+                key={`cell-${index}`}  // eslint-disable-line react/no-array-index-key
+                fill={COLORS[index % COLORS.length]}
               />
             ))}
           </Pie>
