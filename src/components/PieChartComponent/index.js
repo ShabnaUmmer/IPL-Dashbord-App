@@ -33,9 +33,10 @@ const PieChartComponent = ({data}) => {
           >
             {data.map((entry, index) => (
               <Cell
-                key={`cell-${index}`}  // eslint-disable-line react/no-array-index-key
-                fill={COLORS[index % COLORS.length]}
-              />
+  key={`cell-${index}`} // eslint-disable-line react/no-array-index-key
+  fill={COLORS[index % COLORS.length]}
+/>
+
             ))}
           </Pie>
           <Tooltip />
